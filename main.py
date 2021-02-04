@@ -1,5 +1,6 @@
 import numpy
 from PIL import Image
+import matplotlib.pyplot as plt
 
 
 # Function to open and return the image object
@@ -40,7 +41,8 @@ def create_buckets(image, width, height):
             G_array[green_val] += 1
             B_array[blue_val] += 1
 
-    print(numpy.histogram(R_array, 256)) # Seems to be wrong
+    plt.hist(R_array)
+    plt.show()
 
 
 def main():

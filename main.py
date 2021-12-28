@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 from tkinter import *
 from tkinter.filedialog import askopenfilename
 
+import numpy as np
+
 WINDOW_SIZE = '300x100'
 image_file = PIL.Image.new('RGB', (0, 0))
 
@@ -14,6 +16,9 @@ def generate_histogram():
     width, height = grab_dimensions(image_file)
     R_array, G_array, B_array = initialize_color_arrays()
     create_buckets(image_file, width, height, R_array, G_array, B_array)
+    plt.xlabel("RGB value")
+    plt.ylabel("Number of buckets")
+    plt.title("Color histogram")
 
     plot_graph(R_array, 'red')
     plot_graph(G_array, 'green')
